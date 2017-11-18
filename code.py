@@ -4,13 +4,12 @@ from splinter import Browser
 import numpy as np
 
 def wordStatus(word):
-        if(word not in foundWords):
                 word = word.upper()
                 letter = ord(word[:1])-65
 
                 searchLength = int(letpos[letter+1]) - int(letpos[letter])
 
-                for x in range(int(letpos[letter]), int(letpos[letter+1])) :
+                for x in range(int(letpos[letter]), int(letpos[letter+1])):
                         currentWord = words[x]
                         if(currentWord.startswith(word)):
                                 if(currentWord==word):
@@ -27,8 +26,9 @@ def wordStatus(word):
 
 
 def enterWord(word):
-        textBox.fill(word)
-        enterBox.click()
+	if word not in foundWords:
+		textBox.fill(word)
+		enterBox.click()
 
 
 def inBounds(x,y):
@@ -43,10 +43,10 @@ def solve(array,visited,word,x,y):
         #print("solving " + str(word))
         isAWord = wordStatus(word)
         if(isAWord == 2):
-                return
+        		return
         if(isAWord == 0):
-                foundWords.append(word)
                 enterWord(word)
+                foundWords.append(word)
         if(isAWord==1 or isAWord==0):
                 for i in moves:
                         newX = x+i[0]
@@ -75,15 +75,15 @@ def analyzeMatrix(letterArray):
 
 with Browser() as browser:
         #Visit URL
-        url = 'http://www.wordtwist.org/'
-        browser.visit(url+'init.php')
-        username = 'haxorman'
-        password = 'lotus911'
+        #url = 'http://www.wordtwist.org/'
+        #browser.visit(url+'init.php')
+        #username = 'haxorman'
+        #password = 'lotus911'
         #Find and click the 'search' button
-        browser.find_by_name('vb_login_username').fill(username)
-        browser.find_by_name('vb_login_password').fill(password)
-        browser.find_by_value('Log In').click()
-        time.sleep(3)
+        #browser.find_by_name('vb_login_username').fill(username)
+        #browser.find_by_name('vb_login_password').fill(password)
+        #browser.find_by_value('Log In').click()
+        #time.sleep(3)
         browser.visit('http://www.wordtwist.org/init4.php')
         browser.find_by_xpath('/html/body/div[2]/div[4]/div[1]/div/p[4]/a').click()
         letterArray = [['A' for row in range(0,4)] for col in range(0,4)]
