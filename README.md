@@ -8,4 +8,8 @@ The Trie data structure speeds up the code from 6-11 seconds to thousandths of a
 
 Below is an example of my code in action. It first adds all words to a list and then turns the words into a big Trie. After this is done the board is solved in a fraction of a second and then the words are entered into the game.
 
-![Alt Text](https://github.com/corykacal/Boggle-Solver/blob/master/example.gif?raw=true)
+![Alt Text](https://github.com/corykacal/Boggle-Solver/blob/master/solving.gif?raw=true)
+
+These are the results. You can see that 74 out of 74 possible words were found and entered.
+
+![Alt Text](https://github.com/corykacal/Boggle-Solver/blob/master/results.png?raw=true)
