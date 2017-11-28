@@ -10,6 +10,6 @@ Below is an example of my code in action. It first adds all words to a list and 
 
 ![Alt Text](https://github.com/corykacal/Boggle-Solver/blob/master/solving.gif?raw=true)
 
-These are the results. You can see that 75 out of 75 possible words were found and entered.
+These are the results. You can see that 77 out of 77 possible words were found and entered.
 
 ![Alt Text](https://github.com/corykacal/Boggle-Solver/blob/master/results.png?raw=true)
